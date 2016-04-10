@@ -28,6 +28,7 @@ public class SubmissionResource {
             @Context ContainerRequest jerseyRequest,
             @Context HttpServerRequest vertxRequest,
             @Context Vertx vertx) {
+        System.out.println("got a request");
 
         vertx.runOnContext(new Handler<Void>() {
             @Override
