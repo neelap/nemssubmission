@@ -1,25 +1,23 @@
 package com.nems.revctx.resources.submission;
 
-import com.nems.revctx.domain.SubmissionEntity;
 import com.nems.revctx.services.submission.SubmissionService;
-import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpServerRequest;
 import org.glassfish.jersey.server.ContainerRequest;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.container.AsyncResponse;
 import javax.ws.rs.container.Suspended;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
-import java.io.IOException;
 
 /**
  * Created by NE281900 on 4/9/2016.
  */
-@Path("service")
+@Path("service/{id}")
 public class SubmissionResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -27,15 +25,11 @@ public class SubmissionResource {
             @Suspended final AsyncResponse response,
             @Context ContainerRequest jerseyRequest,
             @Context HttpServerRequest vertxRequest,
-            @Context Vertx vertx) {
-        System.out.println("got a request");
+            @Context Vertx vertx,
+            @PathParam("id")int id) {
 
-        vertx.runOnContext(new Handler<Void>() {
-            @Override
-            public void handle(Void aVoid) {
-                response.resume(SubmissionService.getSubmissions());
-            }
+        vertx.runOnContext(aVoid -> {
+            response.resume(SubmissionService.getSubmissions());
         });
     }
 }
-
