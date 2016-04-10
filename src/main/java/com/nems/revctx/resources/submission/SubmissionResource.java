@@ -1,6 +1,7 @@
 package com.nems.revctx.resources.submission;
 
 import com.nems.revctx.domain.SubmissionEntity;
+import com.nems.revctx.services.submission.SubmissionService;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpServerRequest;
@@ -31,7 +32,7 @@ public class SubmissionResource {
         vertx.runOnContext(new Handler<Void>() {
             @Override
             public void handle(Void aVoid) {
-                response.resume(new SubmissionEntity("qwert",1234,"12345",null));
+                response.resume(SubmissionService.getSubmissions());
             }
         });
     }

@@ -4,6 +4,8 @@ import com.nems.revctx.domain.SubmissionEntity;
 import com.nems.revctx.domain.SubmissionRevisionEntity;
 import com.nems.revctx.repository.submission.SubmissionRepository;
 
+import java.util.List;
+
 /**
  * Created by NE281900 on 4/9/2016.
  */
@@ -24,5 +26,9 @@ public class SubmissionService {
 
     public void deleteSubmissionRevision(SubmissionRevisionEntity submissionRevisionEntity) {
 
+    }
+    public static List<SubmissionEntity> getSubmissions() {
+        SubmissionRepository submissionRepository =  new SubmissionRepository();
+        return submissionRepository.getSubmissionEntities();
     }
 }

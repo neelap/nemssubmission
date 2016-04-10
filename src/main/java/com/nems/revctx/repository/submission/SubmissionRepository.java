@@ -35,6 +35,8 @@ public class SubmissionRepository {
         }
     }
 
+    public SubmissionRepository() {
+    }
 
     public  Session getSession() throws HibernateException {
         if(currentSession == null) {
@@ -61,10 +63,10 @@ public class SubmissionRepository {
         return (SubmissionEntity)getSession().createQuery("from SubmissionEntity where journalSubmissionID = " + journalSubmissionID);
     }
 
-    public List<SubmissionRevisionEntity> getSubmissionRevisionEntities(String journalSubmissionID){
-        return (List<SubmissionRevisionEntity>)(((SubmissionEntity)getSession().createQuery("from SubmissionEntity where journalSubmissionID = " + journalSubmissionID)).getSubmissionRevisions());
+
+    public List<SubmissionEntity> getSubmissionEntities(){
+        return (List<SubmissionEntity>)(getSession().createQuery("from SubmissionEntity").list());
     }
 
 
 }
-
