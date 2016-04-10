@@ -81,6 +81,6 @@
     <orderEntry type="library" name="Maven: net.jpountz.lz4:lz4:1.2.0" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-codegen:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.mvel:mvel2:2.2.0.Final" level="project" />
-    <orderEntry type="library" name="Maven: nems.revctx:domainmodel:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: nems.revctx:domainmodel:1.0.1" level="project" />
   </component>
 </module>
