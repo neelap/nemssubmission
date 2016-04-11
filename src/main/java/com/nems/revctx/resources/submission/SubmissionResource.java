@@ -29,7 +29,7 @@ public class SubmissionResource {
             @PathParam("id")int id) {
 
         vertx.runOnContext(aVoid -> {
-            response.resume(SubmissionService.getSubmissions());
+            response.resume(new Test("abc","def"));
         });
     }
 }
