@@ -1,8 +1,11 @@
 package com.nems.revctx.resources.submission;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Created by NE281900 on 4/11/2016.
  */
+@XmlRootElement
 public class Test {
     private String id;
     private String name;
