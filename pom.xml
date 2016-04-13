@@ -192,12 +192,12 @@
         <dependency>
             <groupId>com.hazelcast</groupId>
             <artifactId>hazelcast-all</artifactId>
-            <version>3.2.1</version>
+            <version>3.6.1</version>
         </dependency>
         <dependency>
             <groupId>com.hazelcast</groupId>
             <artifactId>hazelcast-cloud</artifactId>
-            <version>3.2.1</version>
+            <version>3.6.1</version>
         </dependency>
     </dependencies>
 
