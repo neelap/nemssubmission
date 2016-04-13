@@ -3,8 +3,8 @@ package com.nems.revctx.repository.submission;
 /**
  * Created by NE281900 on 4/9/2016.
  */
-import com.nems.revctx.domain.SubmissionEntity;
-import com.nems.revctx.domain.SubmissionRevisionEntity;
+import com.nems.revctx.domainmodel.submission.Submission;
+import com.nems.revctx.domainmodel.submission.SubmissionRevision;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -45,27 +45,27 @@ public class SubmissionRepository {
         return currentSession;
     }
 
-    public void saveSubmission(SubmissionEntity submissionEntity){
+    public void saveSubmission(Submission submissionEntity){
         Transaction transaction = getSession().beginTransaction();
         getSession().save(submissionEntity);
         transaction.commit();
         getSession().close();
     }
 
-    public void saveSubmissionRevision(SubmissionRevisionEntity submissionRevisionEntity){
+    public void saveSubmissionRevision(SubmissionRevision submissionRevisionEntity){
         Transaction transaction = getSession().beginTransaction();
         getSession().save(submissionRevisionEntity);
         transaction.commit();
         getSession().close();
     }
 
-    public SubmissionEntity getSubmissionEntity(String journalSubmissionID){
-        return (SubmissionEntity)getSession().createQuery("from SubmissionEntity where journalSubmissionID = " + journalSubmissionID);
+    public Submission getSubmissionEntity(String journalSubmissionID){
+        return (Submission)getSession().createQuery("from Submission where journalSubmissionID = " + journalSubmissionID);
     }
 
 
-    public List<SubmissionEntity> getSubmissionEntities(){
-        return (List<SubmissionEntity>)(getSession().createQuery("from SubmissionEntity").list());
+    public List<Submission> getSubmissionEntities(){
+        return (List<Submission>)(getSession().createQuery("from Submission").list());
     }
 
 
