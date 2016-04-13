@@ -3,6 +3,8 @@ package com.nems.revctx.resources.submission;
 import com.nems.revctx.services.submission.SubmissionService;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpServerRequest;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.glassfish.jersey.server.ContainerRequest;
 
 import javax.ws.rs.GET;
@@ -19,6 +21,7 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("service/{id}")
 public class SubmissionResource {
+    private static final Logger logger = LogManager.getLogger("SubmissionResource");
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public void getQuery(
@@ -27,6 +30,7 @@ public class SubmissionResource {
             @Context HttpServerRequest vertxRequest,
             @Context Vertx vertx,
             @PathParam("id")int id) {
+        logger.error(id);
 
         vertx.runOnContext(aVoid -> {
             response.resume(new Test("abc","def"));
