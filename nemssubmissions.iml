@@ -86,5 +86,6 @@
     <orderEntry type="library" name="Maven: org.glassfish.jersey.bundles.repackaged:jersey-guava:2.22.1" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.hk2:osgi-resource-locator:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.ext:jersey-entity-filtering:2.22.1" level="project" />
+    <orderEntry type="library" name="Maven: com.hazelcast:hazelcast-all:3.2.1" level="project" />
   </component>
 </module>
