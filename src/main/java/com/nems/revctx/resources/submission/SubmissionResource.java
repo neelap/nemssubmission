@@ -30,7 +30,7 @@ public class SubmissionResource {
             @Context HttpServerRequest vertxRequest,
             @Context Vertx vertx,
             @PathParam("id")int id) {
-        logger.error(id);
+        System.out.println(id);
 
         vertx.runOnContext(aVoid -> {
             response.resume(new Test("abc","def"));
