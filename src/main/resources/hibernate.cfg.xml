@@ -11,8 +11,10 @@
         <property name="connection.password">welcome1</property>
         <property name="show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
-        <mapping class="com.nems.revctx.domain.SubmissionEntity"/>
-        <mapping class="com.nems.revctx.domain.SubmissionRevisionEntity"/>
+        <mapping class="com.nems.revctx.domainmodel.submission.Submission"/>
+        <mapping class="com.nems.revctx.domainmodel.submission.SubmissionRevision"/>
+        <mapping class="com.nems.revctx.domainmodel.submission.SubmissionAsset"/>
+
 
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hbm2ddl.auto">update</property> -->
