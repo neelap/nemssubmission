@@ -31,6 +31,8 @@ public class SubmissionResource {
             @Context Vertx vertx,
             @PathParam("id")int id) {
         System.out.println(id);
+        System.out.println(vertx.isMetricsEnabled());
+        System.out.println(vertx.isClustered());
 
         vertx.runOnContext(aVoid -> {
             response.resume(new Test("abc","def"));
