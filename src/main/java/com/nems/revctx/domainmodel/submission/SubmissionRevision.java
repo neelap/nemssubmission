@@ -33,7 +33,7 @@ public class SubmissionRevision {
     @Column(name = "ABSTRACT")
     private String ms_abstract;
 
-    @OneToMany(mappedBy = "evise_fileId")
+    @OneToMany(mappedBy = "subrev_id")
     private Set<SubmissionAsset> submissionAssets;
 
     public int getSubrev_id() {

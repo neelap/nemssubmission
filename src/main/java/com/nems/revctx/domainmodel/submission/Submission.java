@@ -34,7 +34,7 @@ public class Submission {
     private int evise_journalId;
     @Column(name = "PII")
     private String pii;
-    @OneToMany(mappedBy = "subrev_id")
+    @OneToMany(mappedBy = "evise_sub_id")
     private Set<SubmissionRevision> submissionRevisions;
 
 

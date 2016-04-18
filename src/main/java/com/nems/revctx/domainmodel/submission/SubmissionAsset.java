@@ -12,9 +12,8 @@ public class SubmissionAsset {
     public SubmissionAsset() {
     }
 
-    public SubmissionAsset(String file_name, String s3_id, String fileLocation, String fileType, int subrev_id) {
+    public SubmissionAsset(String file_name, String fileLocation, String fileType, int subrev_id) {
         this.file_name = file_name;
-        this.s3_id = s3_id;
         this.fileLocation = fileLocation;
         this.fileType = fileType;
         this.subrev_id = subrev_id;

@@ -4,6 +4,7 @@ package com.nems.revctx.repository.submission;
  * Created by NE281900 on 4/9/2016.
  */
 import com.nems.revctx.domainmodel.submission.Submission;
+import com.nems.revctx.domainmodel.submission.SubmissionAsset;
 import com.nems.revctx.domainmodel.submission.SubmissionRevision;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -13,7 +14,9 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by NE281900 on 4/6/2016.
@@ -57,6 +60,18 @@ public class SubmissionRepository {
         getSession().save(submissionRevisionEntity);
         transaction.commit();
         getSession().close();
+    }
+
+    public void saveAsset(SubmissionAsset submissionAsset){
+        Transaction transaction = getSession().beginTransaction();
+        getSession().save(submissionAsset);
+        transaction.commit();
+        getSession().close();
+    }
+
+    public ArrayList<Submission> getSubmissions(){
+        ArrayList<Submission> returnVal = (ArrayList<Submission>)getSession().createQuery("from Submission").list();
+        return returnVal;
     }
 
     public Submission getSubmission(String journalSubmissionID){
