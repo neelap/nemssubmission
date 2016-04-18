@@ -59,13 +59,14 @@ public class SubmissionRepository {
         getSession().close();
     }
 
-    public Submission getSubmissionEntity(String journalSubmissionID){
-        return (Submission)getSession().createQuery("from Submission where journalSubmissionID = " + journalSubmissionID);
+    public Submission getSubmission(String journalSubmissionID){
+        Submission returnVal = (Submission)getSession().createQuery("from Submission where evise_journalSubmissionId = " + journalSubmissionID);
+        return returnVal;
     }
 
 
-    public List<Submission> getSubmissionEntities(){
-        return (List<Submission>)(getSession().createQuery("from Submission").list());
+    public List<Submission> getSubmissionEntities( int start, int numOfResults){
+        return (List<Submission>)(getSession().createQuery("from Submission where rownum >= " + start + "and rownum < "+ start + numOfResults).list());
     }
 
 

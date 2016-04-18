@@ -31,12 +31,12 @@ public class SubmissionService {
 
     public static List<Submission> getSubmissions() {
         SubmissionRepository submissionRepository =  new SubmissionRepository();
-        return submissionRepository.getSubmissionEntities();
+        return submissionRepository.getSubmissionEntities(10,10);
     }
 
     public static void main(String args[]){
         SubmissionRepository submissionRepository =  new SubmissionRepository();
-        ArrayList<Submission> sub = (ArrayList<Submission>) submissionRepository.getSubmissionEntities();
+        ArrayList<Submission> sub = (ArrayList<Submission>) submissionRepository.getSubmissionEntities(0,10);
         System.out.println(sub.size());
     }
 }

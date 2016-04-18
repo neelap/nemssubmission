@@ -51,6 +51,14 @@
     <orderEntry type="library" name="Maven: dom4j:dom4j:1.6.1" level="project" />
     <orderEntry type="library" name="Maven: xml-apis:xml-apis:1.0.b2" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.0.1.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-entitymanager:5.1.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-search:5.1.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-search-orm:5.1.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.hibernate:hibernate-search-engine:5.1.0.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-core:4.10.4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-analyzers-common:4.10.4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-facet:4.10.4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.lucene:lucene-queries:4.10.4" level="project" />
     <orderEntry type="library" name="Maven: com.englishtown.vertx:vertx-hk2:2.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.hk2:hk2-api:2.4.0-b12" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />

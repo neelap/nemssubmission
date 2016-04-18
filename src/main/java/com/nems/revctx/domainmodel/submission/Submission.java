@@ -1,5 +1,6 @@
 package com.nems.revctx.domainmodel.submission;
 
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -8,6 +9,7 @@ import java.util.Set;
  */
 @Table(name = "NEMS_SUBMISSION")
 @Entity(name = "Submission")
+
 public class Submission {
     public Submission() {
     }
