@@ -42,7 +42,7 @@
                             <goal>copy-dependencies</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>E:\Learn\IdeaProjects\nemssubmissions\target</outputDirectory>
+                            <outputDirectory>/usr/lib/node_modules/vertx3-full/vertx/lib</outputDirectory>
                             <overWriteReleases>false</overWriteReleases>
                             <overWriteSnapshots>false</overWriteSnapshots>
                             <overWriteIfNewer>true</overWriteIfNewer>
