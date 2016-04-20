@@ -43,7 +43,7 @@ public class SubmissionRevision {
     @Field(index= Index.YES, analyze= Analyze.YES, store= Store.YES)
     private String ms_abstract;
 
-    @OneToMany(mappedBy = "subrev_id", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "subrev_id", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonIgnore
     @IndexedEmbedded
     private Set<SubmissionAsset> submissionAssets;

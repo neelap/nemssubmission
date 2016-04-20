@@ -44,7 +44,7 @@ public class Submission {
     @Column(name = "PII")
     @Field(index= Index.YES, analyze= Analyze.YES, store= Store.YES)
     private String pii;
-    @OneToMany(mappedBy = "evise_sub_id", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "evise_sub_id", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JsonIgnore
     @IndexedEmbedded
     private Set<SubmissionRevision> submissionRevisions;
