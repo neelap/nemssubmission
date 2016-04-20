@@ -44,7 +44,6 @@ public class SubmissionRevision {
     private String ms_abstract;
 
     @OneToMany(mappedBy = "subrev_id", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JsonIgnore
     @IndexedEmbedded
     private Set<SubmissionAsset> submissionAssets;
 
