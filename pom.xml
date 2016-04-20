@@ -42,7 +42,7 @@
                             <goal>copy-dependencies</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>/usr/lib/node_modules/vertx3-full/vertx/lib</outputDirectory>
+                            <outputDirectory>E:\Learn\IdeaProjects\nemssubmissions\target</outputDirectory>
                             <overWriteReleases>false</overWriteReleases>
                             <overWriteSnapshots>false</overWriteSnapshots>
                             <overWriteIfNewer>true</overWriteIfNewer>
@@ -130,9 +130,24 @@
 
         <dependency>
             <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
+            <artifactId>hibernate-search</artifactId>
+            <version>5.5.1.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>5.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
             <version>5.1.0.Final</version>
         </dependency>
+
+
+
         <dependency>
             <groupId>com.englishtown.vertx</groupId>
             <artifactId>vertx-hk2</artifactId>
@@ -199,6 +214,17 @@
             <artifactId>hazelcast-cloud</artifactId>
             <version>3.2.1</version>
         </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.20.0-GA</version>
+        </dependency>
+
     </dependencies>
 
 

@@ -1,5 +1,8 @@
 package com.nems.revctx.domainmodel.submission;
 
+import org.hibernate.search.annotations.*;
+import org.hibernate.search.annotations.Index;
+
 import javax.persistence.*;
 
 /**
@@ -7,6 +10,7 @@ import javax.persistence.*;
  */
 @Table(name = "NEMS_FILE_ASSETS")
 @Entity(name = "SubmissionAsset")
+@Indexed
 public class SubmissionAsset {
 
     public SubmissionAsset() {
@@ -24,14 +28,20 @@ public class SubmissionAsset {
     @Column(name = "FILE_ID")
     private int evise_fileId;
     @Column(name = "FILE_NAME")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.YES)
     private String file_name;
     @Column(name = "S3_ID")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.YES)
     private String s3_id;
     @Column(name = "FILE_LOCATION")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.YES)
     private String fileLocation;
     @Column(name = "FILE_TYPE")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.YES)
     private String fileType;
     @Column(name = "SUBREV_ID")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.YES)
+    @NumericField
     private int subrev_id;
 
     public int getEvise_fileId() {

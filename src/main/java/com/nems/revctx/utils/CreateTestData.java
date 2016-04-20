@@ -1,4 +1,4 @@
-package com.nems.revctx.resources.submission;
+package com.nems.revctx.utils;
 
 import com.nems.revctx.domainmodel.submission.Submission;
 import com.nems.revctx.domainmodel.submission.SubmissionAsset;

@@ -1,6 +1,10 @@
 package com.nems.revctx.domainmodel.submission;
 
 
+
+import org.hibernate.search.annotations.*;
+import org.hibernate.search.annotations.Index;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -9,7 +13,7 @@ import java.util.Set;
  */
 @Table(name = "NEMS_SUBMISSION")
 @Entity(name = "Submission")
-
+@Indexed
 public class Submission {
     public Submission() {
     }
@@ -23,18 +27,24 @@ public class Submission {
     }
 
     @Column(name = "ISSN")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.YES)
     private String prism_issn;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "SUBMISSION_ID")
     private int evise_sub_id;
     @Column(name = "JRNL_SUBMISSION_ID")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.YES)
     private String evise_journalSubmissionId;
     @Column(name = "JRNL_ID")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.YES)
+    @NumericField
     private int evise_journalId;
     @Column(name = "PII")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.YES)
     private String pii;
     @OneToMany(mappedBy = "evise_sub_id")
+    @IndexedEmbedded
     private Set<SubmissionRevision> submissionRevisions;
 
 

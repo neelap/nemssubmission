@@ -1,5 +1,8 @@
 package com.nems.revctx.domainmodel.submission;
 
+import org.hibernate.search.annotations.*;
+import org.hibernate.search.annotations.Index;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -8,6 +11,7 @@ import java.util.Set;
  */
 @Table(name = "NEMS_SUBMISSION_REV")
 @Entity(name = "SubmissionRevision")
+@Indexed
 public class SubmissionRevision {
     public SubmissionRevision() {
     }
@@ -25,15 +29,21 @@ public class SubmissionRevision {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int subrev_id;
     @Column(name = "FULL_TITLE")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.YES)
     private String full_title;
     @Column(name = "SUBMISSION_ID")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.YES)
+    @NumericField
     private int evise_sub_id;
     @Column(name = "STATUS")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.YES)
     private String statusCode;
     @Column(name = "ABSTRACT")
+    @Field(index= Index.YES, analyze= Analyze.YES, store= Store.YES)
     private String ms_abstract;
 
     @OneToMany(mappedBy = "subrev_id")
+    @IndexedEmbedded
     private Set<SubmissionAsset> submissionAssets;
 
     public int getSubrev_id() {

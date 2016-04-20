@@ -16,6 +16,7 @@ import org.hibernate.service.ServiceRegistry;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.Set;
 
 /**
@@ -31,9 +32,11 @@ public class SubmissionRepository {
             Configuration configuration = new Configuration();
             configuration.configure();
 
+
             serviceRegistry = new StandardServiceRegistryBuilder().configure().loadProperties("hibernate.cfg.xml").build();
             ourSessionFactory = configuration.buildSessionFactory(serviceRegistry);
         } catch (Throwable ex) {
+            ex.printStackTrace();
             throw new ExceptionInInitializerError(ex);
         }
     }
