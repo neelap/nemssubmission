@@ -28,7 +28,7 @@ public class TestGetSubmissions {
         org.apache.lucene.search.Query query = qb
                 .keyword()
                 .onFields("prism_issn","evise_sub_id","evise_journalSubmissionId","pii")
-                .matching("ALCOHOL".concat("*"))
+                .matching("ALCOHOL_PII_3")
                 .createQuery();
 // wrap Lucene query in a org.hibernate.Query
         org.hibernate.Query hibQuery =
