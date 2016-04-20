@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.url">jdbc:oracle:thin:@//localhost:1521/XE</property>
+        <property name="connection.url">jdbc:oracle:thin:@//10.0.2.2:1521/XE</property>
         <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
         <property name="hbm2ddl.auto">update</property>
         <property name="connection.username">hr</property>
